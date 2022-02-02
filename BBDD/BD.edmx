@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Actividad1_AccesoADatosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EquiposFutbolTitulos">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreEquipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Champions" Type="int" />
+          <Property Name="Ligas" Type="int" />
+          <Property Name="CopasDelRey" Type="int" />
+          <Property Name="Supercopas" Type="int" />
+        </EntityType>
+        <EntityType Name="TenistasTitulos">
+          <Key>
+            <PropertyRef Name="idTenista" />
+          </Key>
+          <Property Name="idTenista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreTenista" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GrandSlam" Type="int" />
+          <Property Name="AbiertoDeAustralia" Type="int" />
+          <Property Name="RolanGarros" Type="int" />
+          <Property Name="Wimbledon" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Actividad1_AccesoADatosModelStoreContainer">
+          <EntitySet Name="EquiposFutbolTitulos" EntityType="Self.EquiposFutbolTitulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TenistasTitulos" EntityType="Self.TenistasTitulos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Actividad1_AccesoADatosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EquiposFutbolTitulos">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreEquipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Champions" Type="Int32" />
+          <Property Name="Ligas" Type="Int32" />
+          <Property Name="CopasDelRey" Type="Int32" />
+          <Property Name="Supercopas" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TenistasTitulos">
+          <Key>
+            <PropertyRef Name="idTenista" />
+          </Key>
+          <Property Name="idTenista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreTenista" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GrandSlam" Type="Int32" />
+          <Property Name="AbiertoDeAustralia" Type="Int32" />
+          <Property Name="RolanGarros" Type="Int32" />
+          <Property Name="Wimbledon" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Actividad1_AccesoADatosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EquiposFutbolTitulos" EntityType="Self.EquiposFutbolTitulos" />
+          <EntitySet Name="TenistasTitulos" EntityType="Self.TenistasTitulos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Actividad1_AccesoADatosModelStoreContainer" CdmEntityContainer="Actividad1_AccesoADatosEntities">
+          <EntitySetMapping Name="EquiposFutbolTitulos">
+            <EntityTypeMapping TypeName="Actividad1_AccesoADatosModel.EquiposFutbolTitulos">
+              <MappingFragment StoreEntitySet="EquiposFutbolTitulos">
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="Champions" ColumnName="Champions" />
+                <ScalarProperty Name="Ligas" ColumnName="Ligas" />
+                <ScalarProperty Name="CopasDelRey" ColumnName="CopasDelRey" />
+                <ScalarProperty Name="Supercopas" ColumnName="Supercopas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TenistasTitulos">
+            <EntityTypeMapping TypeName="Actividad1_AccesoADatosModel.TenistasTitulos">
+              <MappingFragment StoreEntitySet="TenistasTitulos">
+                <ScalarProperty Name="idTenista" ColumnName="idTenista" />
+                <ScalarProperty Name="NombreTenista" ColumnName="NombreTenista" />
+                <ScalarProperty Name="GrandSlam" ColumnName="GrandSlam" />
+                <ScalarProperty Name="AbiertoDeAustralia" ColumnName="AbiertoDeAustralia" />
+                <ScalarProperty Name="RolanGarros" ColumnName="RolanGarros" />
+                <ScalarProperty Name="Wimbledon" ColumnName="Wimbledon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
